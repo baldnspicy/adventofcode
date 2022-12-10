@@ -23,3 +23,6 @@
 hs_err_pid*
 /.idea/
 /target/
+
+# Don't commit input files per wiki in reddit
+/src/main/resources/2022/
