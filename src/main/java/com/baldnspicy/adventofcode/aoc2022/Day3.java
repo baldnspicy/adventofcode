@@ -11,13 +11,13 @@ public class Day3 {
 
     public static void main(String[] args) {
         List<String> inputStrings;
-        int day = 3;
         setup();
-        inputStrings = getStringList(day);
 
+        String day = "3";
+        inputStrings = getStringList(day);
         partOne(inputStrings);
 
-        int day2 = 32;
+        String day2 = "3.2";
         inputStrings = getStringList(day2);
         partTwo(inputStrings);
     }
@@ -32,20 +32,18 @@ public class Day3 {
             ++line;
             front = str.substring(0, str.length()/2);
             back = str.substring(str.length()/2);
-            System.out.println(line + ": " + str + " " + front + " - " + back);
+//            System.out.println(line + ": " + str + " " + front + " - " + back);
             for (char ch : front.toCharArray()) {
 
                 int found = back.indexOf(ch);
                 if (found > -1) {
-                    System.out.println(ch + " " + getValue(ch) + " " + total);
                     total += getValue(ch);
-                    System.out.println(ch + " " + getValue(ch) + " " + total);
                     break;
                 }
 
             }
         }
-        System.out.println(total);
+        System.out.println("**** " + total + " ****");
     }
 
     static void partTwo(List<String> strings) {
@@ -62,23 +60,21 @@ public class Day3 {
             one = strings.get(index);
             two = strings.get(index + 1);
             three = strings.get(index + 2);
-            System.out.println(one + " " + two + " " + three);
+//            System.out.println(one + " " + two + " " + three);
 
             for (char ch : one.toCharArray()) {
 
                 int found = two.indexOf(ch);
                 if (found > -1) {
                     if (three.indexOf(ch) > -1) {
-                        System.out.println(ch + " " + getValue(ch) + " " + total);
                         total += getValue(ch);
-                        System.out.println(ch + " " + getValue(ch) + " " + total);
                         break;
                     }
                 }
 
             }
         }
-        System.out.println(total);
+        System.out.println("**** " + total + " ****");
     }
 
     static int getValue(char ch) {

@@ -11,7 +11,7 @@ public class Day1 {
 
     public static void main(String[] args) {
         List<String> inputStrings;
-        int day = 1;
+        String day = "1";
 
         inputStrings = getStringList(day);
 

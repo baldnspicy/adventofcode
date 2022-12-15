@@ -10,7 +10,7 @@ public class Day2 {
 
     public static void main(String[] args) {
         List<String> inputStrings;
-        int day = 2;
+        String day = "2";
 
         inputStrings = getStringList(day);
 
