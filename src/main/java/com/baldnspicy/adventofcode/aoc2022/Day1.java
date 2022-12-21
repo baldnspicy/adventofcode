@@ -11,7 +11,7 @@ public class Day1 {
 
     public static void main(String[] args) {
         List<String> inputStrings;
-        int day = 1;
+        String day = "1";
 
         inputStrings = getStringList(day);
 
@@ -41,25 +41,14 @@ public class Day1 {
     private static void partTwo(List<String> strs) {
         List<Integer> elves = new ArrayList<>();
         int sum = 0;
-        int largest = 0;
-        int nextLargest = 0;
-        int nextNextLargest = 0;
         for (String line : strs) {
             if (Objects.equals(line, "")) {
                 elves.add(sum);
-                if (sum > largest) {
-                    largest = sum;
-                } else if (sum > nextLargest) {
-                    nextLargest = sum;
-                } else if (sum > nextNextLargest) {
-                    nextNextLargest = sum;
-                }
                 sum = 0;
                 continue;
             }
             sum += Integer.parseInt(line);
         }
-//        if (sum > largest) largest = sum;
         elves.add(sum);  // add in last guy
 
         Collections.sort(elves);
