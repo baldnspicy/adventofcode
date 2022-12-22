@@ -34,8 +34,6 @@ public class Day9 {
 
     static void parseInput(List<String> lines) {
         HEAD_X = HEAD_Y = TAIL_X = TAIL_Y = PREV_X = PREV_Y = gridSize/2;
-//        HEAD_X = TAIL_X = PREV_X = 0;
-//        HEAD_Y = TAIL_Y = PREV_Y = 5;
         steps = new SimpleEntry[lines.size()];
         int i = 0;
         for (String line : lines) {
