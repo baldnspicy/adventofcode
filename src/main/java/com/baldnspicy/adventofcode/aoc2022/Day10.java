@@ -1,16 +1,15 @@
 package com.baldnspicy.adventofcode.aoc2022;
 
-import java.util.AbstractMap;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Objects;
 
 import static com.baldnspicy.adventofcode.InputFileHelpers.getStringList;
 
 public class Day10 {
-    static final List<Integer> steps = new ArrayList<>();
-    static final List<Integer> cycleValues = new ArrayList<>();
+    static List<Integer> steps = new ArrayList<>();
+    static List<Integer> cycleValues = new ArrayList<>();
+    static List<Integer> cycleValues2 = new ArrayList<>();
     static int register = 1;
     static int cycleCount = 0;
 
@@ -20,10 +19,8 @@ public class Day10 {
         String day = "10";
         inputStrings = getStringList(day);
         partOne(inputStrings);  // Answer: 10760
+        // Part 2 answer: FPGPHFGH
 
-        String day2 = "10";
-        inputStrings = getStringList(day2);
-//        partTwo(inputStrings);  // Answer:
     }
 
     static void parseInput(List<String> lines) {
@@ -50,17 +47,22 @@ public class Day10 {
         }
 
         System.out.println("*** Part 1 answer: " + getAnswer());
+        System.out.println("*** Part 2 answer: ");
+        getAnswer2();
     }
 
     static int processCycle(int cycle) {
         if (cycle == 0) {
             cycleCount++;
             checkCycleCount();
+            checkCycleCount2();
         } else {
             cycleCount++;
             checkCycleCount();
+            checkCycleCount2();
             cycleCount++;
             checkCycleCount();
+            checkCycleCount2();
             register += cycle;
         }
         return register;
@@ -72,6 +74,10 @@ public class Day10 {
             System.out.println("Found: " + cycleCount + " register: " + register + " = " + cycleCount*register);
         }
         cycleValues.add(cycleCount * register);
+    }
+
+    static void checkCycleCount2() {
+        cycleValues2.add(register);
     }
 
     static int getAnswer() {
@@ -87,5 +93,23 @@ public class Day10 {
                 cycleValues.get(140) +
                 cycleValues.get(180) +
                 cycleValues.get(220));
+    }
+
+    static void getAnswer2() {
+        String answer = "";
+        for (int i = 0; i < 241; i++) {
+            final int temp = i%40;
+            if (temp == 0) {
+                System.out.println(answer);
+                answer = "";
+            }
+            if (temp == cycleValues2.get(i) ||
+                    temp == cycleValues2.get(i) - 1 ||
+                    temp == cycleValues2.get(i) + 1) {
+                answer += "#";
+            } else {
+                answer += ".";
+            }
+        }
     }
 }
