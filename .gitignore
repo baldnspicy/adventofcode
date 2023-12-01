@@ -25,4 +25,4 @@ hs_err_pid*
 /target/
 
 # Don't commit input files per wiki in reddit
-/src/main/resources/2022/
+/src/main/resources/

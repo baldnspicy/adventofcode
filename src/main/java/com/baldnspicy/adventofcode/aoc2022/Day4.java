@@ -12,11 +12,11 @@ public class Day4 {
         setup();
 
         String day = "4";
-        inputStrings = getStringList(day);
+        inputStrings = getStringList("2022", day);
         partOne(inputStrings);
 
         String day2 = "4";
-        inputStrings = getStringList(day2);
+        inputStrings = getStringList("2022", day2);
         partTwo(inputStrings);
     }
 
