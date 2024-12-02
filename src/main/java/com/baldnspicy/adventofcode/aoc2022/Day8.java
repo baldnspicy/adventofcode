@@ -13,11 +13,11 @@ public class Day8 {
         List<String> inputStrings;
 
         String day = "8";
-        inputStrings = getStringList(day);
+        inputStrings = getStringList("2022", day);
         partOne(inputStrings);  // Answer: 1794
 
         String day2 = "8";
-        inputStrings = getStringList(day2);
+        inputStrings = getStringList("2022", day2);
         partTwo(inputStrings);  // Answer: 199272
     }
 

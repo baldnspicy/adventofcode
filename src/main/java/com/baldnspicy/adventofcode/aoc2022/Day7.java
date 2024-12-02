@@ -9,11 +9,11 @@ public class Day7 {
         List<String> inputStrings;
 
         String day = "7";
-        inputStrings = getStringList(day);
+        inputStrings = getStringList("2022", day);
         partOne(inputStrings);  // Answer:
 
         String day2 = "7";
-        inputStrings = getStringList(day2);
+        inputStrings = getStringList("2022", day2);
         partTwo(inputStrings);  // Answer:
     }
 

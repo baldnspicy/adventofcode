@@ -13,7 +13,7 @@ public class Day1 {
         List<String> inputStrings;
         String day = "1";
 
-        inputStrings = getStringList(day);
+        inputStrings = getStringList("2022", day);
 
         partOne(inputStrings);
         partTwo(inputStrings);

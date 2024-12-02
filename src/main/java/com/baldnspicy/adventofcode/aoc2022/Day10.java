@@ -17,7 +17,7 @@ public class Day10 {
         List<String> inputStrings;
 
         String day = "10";
-        inputStrings = getStringList(day);
+        inputStrings = getStringList("2022", day);
         partOne(inputStrings);  // Answer: 10760
         // Part 2 answer: FPGPHFGH
 

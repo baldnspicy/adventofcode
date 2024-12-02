@@ -1,8 +1,6 @@
 package com.baldnspicy.adventofcode.aoc2022;
 
-import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 
@@ -14,11 +12,11 @@ public class Day6 {
         List<String> inputStrings;
 
         String day = "6";
-        inputStrings = getStringList(day);
+        inputStrings = getStringList("2022", day);
         partOne(inputStrings.get(0));  // Answer: 1100
 
         String day2 = "6";
-        inputStrings = getStringList(day2);
+        inputStrings = getStringList("2022", day2);
         partTwo(inputStrings.get(0));  // Answer: 2421
     }
 
