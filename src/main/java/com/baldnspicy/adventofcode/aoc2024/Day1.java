@@ -3,32 +3,26 @@ package com.baldnspicy.adventofcode.aoc2024;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.Map;
 
 import static com.baldnspicy.adventofcode.InputFileHelpers.getStringList;
 
 public class Day1 {
+    static ArrayList<Integer> left = new ArrayList<>();
+    static ArrayList<Integer> right = new ArrayList<>();
+    static List<String> inputStrings;
 
     public static void main(String[] args) {
-        List<String> inputStrings;
+
         String day = "1";
 
         inputStrings = getStringList("2024", day);
+        setupLists();
 
-        partOne(inputStrings);
-        partTwo(inputStrings);
+        partOne();
+        partTwo();
     }
 
-    static void partOne(List<String> strs) {
-        ArrayList<Integer> left = new ArrayList<>(strs.size());
-        ArrayList<Integer> right = new ArrayList<>(strs.size());
-        for (String line : strs) {
-            left.add(getInteger(line));
-            right.add(getInteger(line.substring(8, line.length())));
-        }
-
-        Collections.sort(left);
-        Collections.sort(right);
+    static void partOne() {
         int distanceTotal = 0;
         for (int i = 0; i < left.size(); i++) {
             distanceTotal += Math.abs(left.get(i) - right.get(i));
@@ -48,17 +42,7 @@ public class Day1 {
         return Integer.parseInt(nums.toString());
     }
 
-    static void partTwo(List<String> strs) {
-        ArrayList<Integer> left = new ArrayList<>(strs.size());
-        ArrayList<Integer> right = new ArrayList<>(strs.size());
-        for (String line : strs) {
-            left.add(getInteger(line));
-            right.add(getInteger(line.substring(8, line.length())));
-        }
-
-        Collections.sort(left);
-        Collections.sort(right);
-
+    static void partTwo() {
         int similarityScore = 0;
         for (Integer integer : left) {
             int count = getCount(integer, right);
@@ -75,5 +59,15 @@ public class Day1 {
             }
         }
         return count;
+    }
+
+    static void setupLists() {
+        for (String line : inputStrings) {
+            left.add(getInteger(line));
+            right.add(getInteger(line.substring(8)));
+        }
+
+        Collections.sort(left);
+        Collections.sort(right);
     }
 }
